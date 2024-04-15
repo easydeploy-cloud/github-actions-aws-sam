@@ -73,7 +73,7 @@ jobs:
 
 Replace both ###REGION### with your AWS Region.
 
-##Deploying your application
+## Deploying your application
 
 Add all the files to your local git repository, commit the changes, and push to GitHub.
 
