@@ -1,5 +1,15 @@
 # github-actions-with-aws-sam
 
+## Commands to install Docker in Amazon Linux 3
+```bash
+sudo yum update -y
+sudo yum search docker -y
+sudo yum install docker -y
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+sudo systemctl status docker.service
+```
+
 ## Install SAM CLI in linux
 
 #### Run the following commands to install SAM CLI. X86_64
@@ -75,13 +85,18 @@ Replace both ###REGION### with your AWS Region.
 
 ## Deploying your application
 
-Add all the files to your local git repository, commit the changes, and push to GitHub.
+Add all the files to your git repository, commit the changes, and push to GitHub.
 
 ```bash
+git init
 git add .
-git commit -am "Add AWS SAM files"
-git push
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/<git-user-name>/github-actions-with-aws-sam.git
+git push -u origin main
 ```
+
+Replace the **<git-user-name>** with your GitHub account's user name or organization's name where. you have your repository.
 
 ## Testing the application
 
