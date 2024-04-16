@@ -49,6 +49,13 @@ The API response should be: ```{"message": "hello world"}```
 
 ## To setup GitHub Actions
 
+### GitHub Secrets
+
+Create 2 GitHub secrets in your repository with following:
+- ```AWS_ACCESS_KEY_ID ```
+- ```AWS_SECRET_ACCESS_KEY```
+
+### Create Pipeline file
 Create a new folder as ```.github/workflows``` in the root path of the cloned repo.
 
 Create a new file called **sam-pipeline.yml** under the **.github/workflows** directory.
@@ -81,7 +88,7 @@ jobs:
       - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
 ```
 
-Replace both ###REGION### with your AWS Region.
+Replace ###REGION### with your AWS Region.
 
 ## Deploying your application
 
@@ -96,7 +103,7 @@ git remote add origin https://github.com/<git-user-name>/github-actions-with-aws
 git push -u origin main
 ```
 
-Replace the **<git-user-name>** with your GitHub account's user name or organization's name where. you have your repository.
+Replace the **git-user-name** with your GitHub account's user name or organization's name where. you have your repository.
 
 ## Testing the application
 
@@ -109,6 +116,8 @@ The API response should be: ```{"message": "hello world"}```
 
 
 ## Cleanup
+
+Run ```aws configure ``` to configure aws cli in your insntance.
 
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
