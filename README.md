@@ -10,6 +10,11 @@ sudo systemctl start docker.service
 sudo systemctl status docker.service
 ```
 
+## Install git
+```bash
+sudo yum install git -y
+```
+
 ## Install SAM CLI in linux
 
 #### Run the following commands to install SAM CLI. X86_64
@@ -58,7 +63,15 @@ Create 2 GitHub secrets in your repository with following:
 ### Create Pipeline file
 Create a new folder as ```.github/workflows``` in the root path of the cloned repo.
 
+```bash
+mkdir -p .github/workflows
+```
+
 Create a new file called **sam-pipeline.yml** under the **.github/workflows** directory.
+
+```bash
+vi .github/workflows/sam-pipeline.yml
+```
 
 Add these lines into that file:
 
